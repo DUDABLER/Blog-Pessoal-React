@@ -1,19 +1,19 @@
-// import { useContext } from "react";
-import { Link } from "react-router-dom"
-// import { AuthContext } from "../../contexts/AuthContext";
+import { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom"
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Navbar() {
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
-    // const { usuario, handleLogout } = useContext(AuthContext)
+    const { handleLogout } = useContext(AuthContext)
 
-    // function logout() {
+    function logout() {
 
-    //     handleLogout()
-    //     alert('O Usuário foi desconectado com sucesso!')
-    //     navigate('/')
-    // }
+        handleLogout()
+        alert('O Usuário foi desconectado com sucesso!')
+        navigate('/')
+    }
 
     return (
         <>
@@ -29,8 +29,7 @@ function Navbar() {
                         Temas
                         Cadastrar tema
                         Perfil
-                        Sair
-                        {/* <Link to='' onClick={logout} className='hover:underline'>Sair</Link> */}
+                        <Link to='' onClick={logout} className='hover:underline'>Sair</Link>
                     </div>
                 </div>
             </div>
