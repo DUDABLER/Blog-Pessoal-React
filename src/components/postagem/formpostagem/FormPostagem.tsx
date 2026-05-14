@@ -180,7 +180,7 @@ function FormPostagem() {
 
                         {temas.map((tema) => (
                             <>
-                                <option value="{tema.id}">{tema.descricao}</option>
+                                <option key={tema.id} value={tema.id}>{tema.descricao}</option>
                             </>
                         ))}
 
